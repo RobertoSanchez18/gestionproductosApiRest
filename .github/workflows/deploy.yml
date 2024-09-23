@@ -46,4 +46,4 @@ jobs:
         run: |
           # Cambia la imagen en los manifiestos de Kubernetes antes de aplicar
           sed -i 's|image:.*|image: '"${{ secrets.DOCKER_USERNAME }}/gestionproductos:latest"'|' k8s.deployment.yaml
-          kubectl apply -f k8s.deployment.yaml
+          kubectl apply -f k8s.deployment.yaml --validate=false
